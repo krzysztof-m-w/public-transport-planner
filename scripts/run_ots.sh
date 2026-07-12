@@ -5,7 +5,13 @@ set -euo pipefail
 OTP_VERSION="2.6.0"
 OTP_JAR="otp-${OTP_VERSION}-shaded.jar"
 
-DATA_DIR="data"
+if [ -z $1 ]; then
+    DATA_DIR="data"
+else
+    DATA_DIR="$1"
+    echo "Using data directory: $DATA_DIR"
+fi
+
 GTFS="${DATA_DIR}/gtfs.zip"
 OSM="${DATA_DIR}/kujawsko-pomorskie-latest.osm.pbf"
 

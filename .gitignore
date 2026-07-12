@@ -1,2 +1,4 @@
 otp*.jar
 data/*
+data_new/*
+.venv/*
