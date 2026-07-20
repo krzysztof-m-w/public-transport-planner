@@ -10,6 +10,6 @@ echo "Downloading latest official Bydgoszcz GTFS..."
 
 curl -L \
   -o "$GTFS" \
-  "https://zdmikp.bydgoszcz.pl/rozklady/paczka/gtfs/gtfs.zip"
+  "https://mkuran.pl/gtfs/bydgoszcz.zip"
 
 echo "Saved to $GTFS"

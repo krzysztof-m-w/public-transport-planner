@@ -5,7 +5,7 @@ set -euo pipefail
 OTP_VERSION="2.6.0"
 OTP_JAR="otp-${OTP_VERSION}-shaded.jar"
 
-if [ -z $1 ]; then
+if [ -z "${1-}" ]; then
     DATA_DIR="data"
 else
     DATA_DIR="$1"
@@ -50,7 +50,7 @@ if [ ! -f "$OSM" ]; then
         "https://download.geofabrik.de/europe/poland/kujawsko-pomorskie-latest.osm.pbf"
 fi
 
-if [ ! -f "data/graph.obj" ]; then
+if [ ! -f "${DATA_DIR}/graph.obj" ]; then
     echo "Graph not found; building..."
     java -Xmx2G -jar "$OTP_JAR" --build "$DATA_DIR" --save
 fi
